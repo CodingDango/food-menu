@@ -14,7 +14,6 @@ const CATEGORIES = [
 
 const DEFAULT_CATEGORY = "burgers";
 
-// TODO: Add animations when changing tabs
 export default function FoodTabs() {
   const [category, setCategory] = useState(DEFAULT_CATEGORY);
 

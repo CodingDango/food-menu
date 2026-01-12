@@ -1,35 +1,27 @@
-export default function FoodGrid() {
+import type { Food } from "../types/types";
+
+export default function FoodGrid({ foods }: { foods: Food[] }) {
   return (
     <div className="grid grid-cols-3 gap-lg flex-wrap">
-      <div className="bg-card p-lg rounded-2xl flex flex-col items-center gap-lg">
-        <div className="w-[150px] h-[100px]">
-          <img src="/burger.png" className="object-contain drop-shadow-2xl" />
+      {foods.map((food) => (
+        <div className="bg-card p-lg pt-xs rounded-2xl flex flex-col items-center gap-lg">
+          <div className="w-[150px] h-[100px]">
+            <img
+              src={food.imageSrc}
+              className="object-contain drop-shadow-2xl"
+            />
+          </div>
+
+          <div className="flex items-center gap-sm">
+            <p className="font-medium text-xl text-center capitalize">
+              {food.name}
+            </p>
+            <span className="rounded-full px-xs text-primary-foreground bg-primary font-medium">
+              {food.price} $
+            </span>
+          </div>
         </div>
-
-        <p className="font-medium text-lg text-center">Chicken Burger</p>
-      </div>
-
-      <div className="bg-card p-lg rounded-2xl flex flex-col gap-lg items-center">
-        <div className="w-[150px] h-[100px]">
-          <img src="/burger.png" className="object-contain drop-shadow-2xl" />
-        </div>
-
-        <p className="font-medium text-lg text-center">Chicken Burger</p>
-      </div>
-      <div className="bg-card p-lg rounded-2xl flex flex-col gap-lg items-center">
-        <div className="w-[150px] h-[100px]">
-          <img src="/burger.png" className="object-contain drop-shadow-2xl" />
-        </div>
-
-        <p className="font-medium text-lg text-center">Chicken Burger</p>
-      </div>
-      <div className="bg-card p-lg rounded-2xl flex flex-col gap-lg items-center">
-        <div className="w-[150px] h-[100px]">
-          <img src="/burger.png" className="object-contain drop-shadow-2xl" />
-        </div>
-
-        <p className="font-medium text-lg text-center">Chicken Burger</p>
-      </div>
+      ))}
     </div>
   );
 }
