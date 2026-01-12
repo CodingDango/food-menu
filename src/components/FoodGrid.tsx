@@ -12,13 +12,12 @@ export default function FoodGrid({ foods }: { foods: Food[] }) {
             />
           </div>
 
-          <div className="flex items-center gap-sm">
+          <div className="w-full flex flex-col items-center gap-xs">
             <p className="font-medium text-xl text-center capitalize">
               {food.name}
             </p>
-            <span className="rounded-full px-xs text-primary-foreground bg-primary font-medium">
-              {food.price} $
-            </span>
+
+            <span className="text-2xl text-primary font-bold">{food.price} $</span>
           </div>
         </div>
       ))}

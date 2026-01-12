@@ -11,17 +11,18 @@ export default function FoodHero({
   return (
     <div className="bg-card grid grid-cols-[1fr_300px] p-lg rounded-2xl gap-sm  ">
       <div className="space-y-md">
-        <div className="flex gap-lg">
+        <div className="flex items-center gap-lg">
           <h2 className="text-3xl font-medium capitalize">{name}</h2>
-          <span className="rounded-full px-md p-1 text-2xl text-primary-foreground bg-primary font-medium">
+          <span className="text-3xl text-primary font-bold">
             {price} $
           </span>
         </div>
         <p className="text-muted-foreground">{description}</p>
+
         <div className="bg-secondary rounded-2xl overflow-hidden justify-between inline-block">
           <div className="grid grid-cols-3">
             {nutrients.map((nutrient) => (
-              <div className="py-md flex flex-col gap-xs items-center">
+              <div className="py-md flex flex-col gap-xs items-center text-center">
                 <div className="px-lg">
                   <div className="flex flex-col items-center">
                     <FlameIcon />

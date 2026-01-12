@@ -11,9 +11,9 @@ const BURGER_HERO: Food = {
   price: 5.99,
   imageSrc: "/burger1.png",
   nutrients: [
-    { name: "energy", value: "334 kCal" },
-    { name: "protein", value: "7 gm" },
-    { name: "fats", value: "12 gm" },
+    { name: "energy", value: "334 cal" },
+    { name: "protein", value: "7 g" },
+    { name: "fats", value: "12 g" },
   ],
 };
 
@@ -47,7 +47,7 @@ const BURGERS: Food[] = [
 
 export default function Menu() {
   return (
-    <div className="p-2xl grid place-items-center">
+    <div className="p-2xl grid place-items-center font-main">
       <div className="max-w-7xl w-full">
         <div className="flex flex-col gap-2xl">
           <MenuHeading />
