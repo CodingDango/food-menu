@@ -1,5 +1,5 @@
 import { FlameIcon } from "lucide-react";
-import type { Food } from "../types/types";
+import type { FeaturedMenuItem } from "../types/types";
 
 export default function FoodHero({
   name,
@@ -7,7 +7,7 @@ export default function FoodHero({
   price,
   imageSrc,
   nutrients = [],
-}: Food) {
+}: FeaturedMenuItem) {
   return (
     <div className="bg-card grid grid-cols-[1fr_300px] p-lg rounded-2xl gap-sm  ">
       <div className="space-y-md">

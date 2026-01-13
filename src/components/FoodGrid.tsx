@@ -1,6 +1,6 @@
-import type { Food } from "../types/types";
+import type { SimpleMenuItem } from "../types/types";
 
-export default function FoodGrid({ foods }: { foods: Food[] }) {
+export default function FoodGrid({ foods }: { foods: SimpleMenuItem[] }) {
   return (
     <div className="grid grid-cols-3 gap-lg flex-wrap">
       {foods.map((food) => (

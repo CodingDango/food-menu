@@ -3,10 +3,20 @@ export interface Nutrient {
   value: string; // 334kcal or 7 gm or 12 gm
 }
 
-export interface Food {
+export type FoodCategory = 'burgers' | 'drinks' | 'sides' | 'deserts';
+
+export interface SimpleMenuItem {
   name: string;
-  description?: string;
-  price: number;
   imageSrc: string;
-  nutrients?: Nutrient[];
+  price: number;
+}
+
+export interface FeaturedMenuItem extends SimpleMenuItem {
+  description: string;
+  nutrients: Nutrient[];
+}
+
+export interface MenuCategory {
+  featured?: FeaturedMenuItem;
+  list: SimpleMenuItem[];
 }

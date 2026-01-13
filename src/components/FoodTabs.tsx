@@ -1,29 +1,25 @@
 import { cn } from "../lib/utils";
+import type { FoodCategory } from "../types/types";
+import { foodCategories } from "../lib/menu/categories";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Cookie, CupSoda, Dessert, Hamburger } from "lucide-react";
-import { Button } from "./ui/button";
-import { useState } from "react";
 
-const CATEGORIES = [
-  { name: "burgers", icon: Hamburger },
-  { name: "drinks", icon: CupSoda },
-  { name: "sides", icon: Cookie },
-  { name: "deserts", icon: Dessert },
-];
+interface FoodTabsProps {
+  category: FoodCategory;
+  onCategoryChange: (value: FoodCategory) => void;
+}
 
-const DEFAULT_CATEGORY = "burgers";
-
-export default function FoodTabs() {
-  const [category, setCategory] = useState(DEFAULT_CATEGORY);
-
+export default function FoodTabs({
+  category,
+  onCategoryChange
+}: FoodTabsProps) {
   return (
     <RadioGroup
       value={category}
-      onValueChange={(category) => setCategory(category)}
+      onValueChange={val => onCategoryChange(val as FoodCategory)}
     >
       <div className="flex flex-col gap-lg">
-        {CATEGORIES.map((val) => {
+        {foodCategories.map((val) => {
           const isSelected = val.name === category;
           return (
             <Label
