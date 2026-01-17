@@ -3,15 +3,15 @@ import FoodHero from "./components/FoodHero";
 import FoodGrid from "./components/FoodGrid";
 import MenuHeading from "./components/MenuHeading";
 
-import type { FoodCategory, SimpleMenuItem } from "./types/types";
+import type { FoodCategory } from "./types/types";
 import { useMemo, useState } from "react";
-import { foodMenu } from "./lib/menu";
+import { foodMenu } from "./lib/menu/foods";
 
 export default function Menu() {
   const [foodCategory, setFoodCategory] = useState<FoodCategory>("burgers");
 
   const { featured: featuredFood, list: foods } = useMemo(
-    () => foodMenu[foodCategory],
+    () => foodMenu[foodCategory] ?? {},
     [foodCategory]
   );
 
@@ -29,7 +29,7 @@ export default function Menu() {
 
             <div className="flex flex-col gap-lg">
               {featuredFood && <FoodHero {...featuredFood} />}
-              <FoodGrid foods={foods} />
+              {foods && <FoodGrid foods={foods} />}
             </div>
           </div>
         </div>

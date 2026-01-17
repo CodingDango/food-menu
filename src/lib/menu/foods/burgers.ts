@@ -1,4 +1,4 @@
-import type { MenuCategory } from "../../types/types";
+import type { MenuCategory } from "../../../types/types";
 
 export const burgersCategory: MenuCategory = {
   featured: {

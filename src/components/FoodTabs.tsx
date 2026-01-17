@@ -11,12 +11,12 @@ interface FoodTabsProps {
 
 export default function FoodTabs({
   category,
-  onCategoryChange
+  onCategoryChange,
 }: FoodTabsProps) {
   return (
     <RadioGroup
       value={category}
-      onValueChange={val => onCategoryChange(val as FoodCategory)}
+      onValueChange={(val) => onCategoryChange(val as FoodCategory)}
     >
       <div className="flex flex-col gap-lg">
         {foodCategories.map((val) => {
@@ -26,16 +26,17 @@ export default function FoodTabs({
               className={cn(
                 "bg-card rounded-2xl px-md py-sm flex gap-lg items-center cursor-pointer",
                 isSelected &&
-                  "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                  "bg-primary text-primary-foreground shadow-lg shadow-primary/25",
               )}
             >
               <RadioGroupItem value={val.name} hidden />
-              <div
+              <img
+                src={val.iconSrc}
                 className={cn(
-                  "w-10 h-10 rounded-full bg-muted",
-                  isSelected && "bg-white"
+                  "size-10 rounded-full",
+                  isSelected && "bg-primary",
                 )}
-              ></div>
+              ></img>
               <span className="capitalize font-medium text-base">
                 {val.name}
               </span>

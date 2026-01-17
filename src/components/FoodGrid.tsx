@@ -4,16 +4,16 @@ export default function FoodGrid({ foods }: { foods: SimpleMenuItem[] }) {
   return (
     <div className="grid grid-cols-3 gap-lg flex-wrap">
       {foods.map((food) => (
-        <div className="bg-card p-lg pt-xs rounded-2xl flex flex-col items-center gap-lg">
-          <div className="w-[150px] h-[100px]">
+        <div className="bg-card p-lg pt-sm rounded-2xl flex flex-col items-center gap-lg">
+          <div className="w-[150px] h-[125px] relative">
             <img
               src={food.imageSrc}
-              className="object-contain drop-shadow-2xl"
+              className="object-contain drop-shadow-2xl absolute inset-0 aspect-square"
             />
           </div>
 
           <div className="w-full flex flex-col items-center gap-xs">
-            <p className="font-medium text-xl text-center capitalize">
+            <p className="font-semibold text-xl text-center capitalize">
               {food.name}
             </p>
 
