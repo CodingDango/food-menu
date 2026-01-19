@@ -1,5 +1,6 @@
 import type { FeaturedMenuItem } from "../types/types";
 import { nutrientIcons } from "../lib/nutrients/icons";
+import { getCurrencyUnit } from "../lib/utils";
 
 export default function FoodHero({
   name,
@@ -9,11 +10,11 @@ export default function FoodHero({
   nutrients = [],
 }: FeaturedMenuItem) {
   return (
-    <div className="bg-card grid grid-cols-[1fr_300px] p-lg rounded-2xl gap-sm  ">
-      <div className="space-y-md">
-        <div className="flex items-center gap-lg">
+    <div className="bg-card grid grid-cols-[1fr_300px] p-space-lg rounded-2xl gap-sm  ">
+      <div className="space-y-space-md">
+        <div className="flex items-center gap-space-lg">
           <h2 className="text-3xl font-semibold capitalize">{name}</h2>
-          <span className="text-3xl text-primary font-bold">{price} $</span>
+          <span className="text-3xl text-primary font-bold">{price} {getCurrencyUnit()}</span>
         </div>
         <p className="text-muted-foreground">{description}</p>
 
@@ -23,13 +24,13 @@ export default function FoodHero({
               const Icon = nutrientIcons[nutrient.name];
 
               return (
-                <div className="py-md flex flex-col gap-sm items-center text-center">
-                  <div className="px-lg font-semibold">
+                <div className="py-space-md flex flex-col gap-space-sm items-center text-center">
+                  <div className="px-space-lg font-semibold">
                     <div className="flex flex-col items-center">
                       {<Icon size={22}/>}
                       <span className="capitalize">{nutrient.name}</span>
                     </div>
-                    <span className="text-xl  text-primary">
+                    <span className="text-xl text-primary">
                       {nutrient.value}
                     </span>
                   </div>
@@ -40,7 +41,7 @@ export default function FoodHero({
         </div>
       </div>
 
-      <div className="flex flex-col gap-xs">
+      <div className="flex flex-col gap-space-xs">
         <div className="w-full md:w-[300px] h-[250px] relative flex-shrink-0">
           <img
             src={imageSrc}

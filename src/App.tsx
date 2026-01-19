@@ -16,18 +16,18 @@ export default function Menu() {
   );
 
   return (
-    <div className="p-2xl grid place-items-center font-main">
+    <div className="p-space-2xl grid place-items-center font-main">
       <div className="max-w-7xl w-full">
-        <div className="flex flex-col gap-2xl">
+        <div className="flex flex-col gap-space-2xl">
           <MenuHeading />
 
-          <div className="grid grid-cols-[1fr_3fr] gap-2xl">
+          <div className="grid grid-cols-[1fr_3fr] gap-space-2xl">
             <FoodTabs
               category={foodCategory}
               onCategoryChange={setFoodCategory}
             />
 
-            <div className="flex flex-col gap-lg">
+            <div className="flex flex-col gap-space-lg">
               {featuredFood && <FoodHero {...featuredFood} />}
               {foods && <FoodGrid foods={foods} />}
             </div>

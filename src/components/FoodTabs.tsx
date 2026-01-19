@@ -1,6 +1,6 @@
 import { cn } from "../lib/utils";
 import type { FoodCategory } from "../types/types";
-import { foodCategories } from "../lib/menu/categories";
+import { foodCategories } from "../lib/menu/categories/categories";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
@@ -18,13 +18,13 @@ export default function FoodTabs({
       value={category}
       onValueChange={(val) => onCategoryChange(val as FoodCategory)}
     >
-      <div className="flex flex-col gap-lg">
+      <div className="flex flex-col gap-space-lg">
         {foodCategories.map((val) => {
           const isSelected = val.name === category;
           return (
             <Label
               className={cn(
-                "bg-card rounded-2xl px-md py-sm flex gap-lg items-center cursor-pointer",
+                "bg-card rounded-2xl px-space-md py-space-sm flex gap-space-lg items-center cursor-pointer",
                 isSelected &&
                   "bg-primary text-primary-foreground shadow-lg shadow-primary/25",
               )}
@@ -35,6 +35,7 @@ export default function FoodTabs({
                 className={cn(
                   "size-10 rounded-full",
                   isSelected && "bg-primary",
+                  !isSelected && "drop-shadow-md"
                 )}
               ></img>
               <span className="capitalize font-medium text-base">
