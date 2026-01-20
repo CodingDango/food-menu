@@ -3,6 +3,7 @@ import FoodHero from "./components/FoodHero";
 import FoodGrid from "./components/FoodGrid";
 import MenuHeading from "./components/MenuHeading";
 
+import { AnimatePresence, motion } from "motion/react";
 import type { FoodCategory } from "./types/types";
 import { useMemo, useState } from "react";
 import { foodMenu } from "./lib/menu/foods";
@@ -12,25 +13,34 @@ export default function Menu() {
 
   const { featured: featuredFood, list: foods } = useMemo(
     () => foodMenu[foodCategory] ?? {},
-    [foodCategory]
+    [foodCategory],
   );
 
   return (
-    <div className="p-space-2xl grid place-items-center font-main">
-      <div className="max-w-7xl w-full">
-        <div className="flex flex-col gap-space-2xl">
+    <div className="p-space-2xl grid place-items-center font-main ">
+      <div className="max-w-5xl w-full">
+        <div className="flex flex-col gap-space-xl">
           <MenuHeading />
 
-          <div className="grid grid-cols-[1fr_3fr] gap-space-2xl">
+          <div className="flex flex-col gap-space-xl">
             <FoodTabs
               category={foodCategory}
               onCategoryChange={setFoodCategory}
             />
 
-            <div className="flex flex-col gap-space-lg">
-              {featuredFood && <FoodHero {...featuredFood} />}
-              {foods && <FoodGrid foods={foods} />}
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={foodCategory}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col gap-space-lg"
+              >
+                {featuredFood && <FoodHero {...featuredFood} />}
+                {foods && <FoodGrid foods={foods} />}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

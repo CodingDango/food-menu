@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function getCurrencyUnit(): string {
-  return '$';
+export function toCurrency(num: number): string {
+  return `$${num}`;
 }

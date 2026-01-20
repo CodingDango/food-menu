@@ -1,26 +1,27 @@
-import { Info } from "lucide-react";
-import type { SimpleMenuItem } from "../types/types";
+import type { MenuItem } from "../types/types";
 import { Button } from "./ui/button";
 
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { getCurrencyUnit } from "../lib/utils";
+import { cn, toCurrency } from "../lib/utils";
+import { Badge } from "./ui/badge";
+import { Info } from "lucide-react";
+import FoodBadgeList from "./FoodBadgeList";
 
 interface FoodCardProps {
-  food: SimpleMenuItem;
+  food: MenuItem;
 }
 
 export default function FoodCard({ food }: FoodCardProps) {
   return (
     <div className="bg-card py-space-lg px-space-md pt-space-sm rounded-2xl relative">
       <div className="flex flex-col items-center gap-space-lg relative">
-        <div className="w-[150px] h-[125px] relative">
+        <div className="w-38 h-32 relative">
           <img
             src={food.imageSrc}
             className="object-contain drop-shadow-2xl absolute inset-0 aspect-square"
@@ -33,7 +34,7 @@ export default function FoodCard({ food }: FoodCardProps) {
           </p>
 
           <span className="text-2xl text-primary font-bold">
-            {food.price} {getCurrencyUnit()}
+            {toCurrency(food.price)}
           </span>
         </div>
 
@@ -51,14 +52,27 @@ export default function FoodCard({ food }: FoodCardProps) {
       <Dialog>
         <DialogTrigger className="absolute inset-0 rounded-2xl"></DialogTrigger>
 
-        <DialogContent className="sm:max-w-xl w-full">
-          <DialogHeader className="flex flex-col gap-y-space-sm">
-            <DialogTitle className="capitalize text-2xl flex gap-space-sm items-center">
-              <span className="font-semibold">{food.name}</span>
-              <span className="font-bold text-primary">{food.price} {getCurrencyUnit()}</span>
+        <DialogContent className="sm:max-w-3xl w-full grid-cols-[1fr_300px]">
+          <DialogHeader className="flex flex-col gap-y-space-md">
+            <DialogTitle className="capitalize text-2xl flex gap-space-md items-start">
+              <div className="font-bold">{food.name}</div>
+              <div className="font-bold text-primary text-end text-2xl">
+                {toCurrency(food.price)}
+              </div>
             </DialogTitle>
-            <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias odit magnam aspernatur non illum. Debitis!</p>
+
+            <p className="text-muted-foreground">{food.description}</p>
+
+            <FoodBadgeList foodBadges={food.foodBadges}/>
           </DialogHeader>
+
+          <div className="w-full md:w-75 h-55 relative shrink-0">
+            <img
+              src={food.imageSrc}
+              alt="Burger"
+              className="w-full h-full object-contain drop-shadow-xl scale-105  "
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </div>

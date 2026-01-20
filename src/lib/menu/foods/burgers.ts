@@ -1,43 +1,56 @@
 import type { MenuCategory } from "../../../types/types";
+import { foodBadges } from "../badges/foodBadges";
 
 export const burgersCategory: MenuCategory = {
   featured: {
-    name: "veggie burger",
+    name: "Veggie Burger",
     description:
       "A delectable patty filled with potatoes, peas, carrots and tasty Indian spices. Topped with crispy lettuce and mayo.",
     price: 5.99,
     imageSrc: "/burger1.png",
-    nutrients: [
-      { name: "energy", value: "334 cal" },
-      { name: "protein", value: "7 g" },
-      { name: "fats", value: "12 g" },
-    ],
+    foodBadges: [foodBadges.veg, foodBadges.fresh],
   },
+
   list: [
     {
-      name: "chicken burger",
+      name: "Classic Crispy Chicken Burger",
+      description:
+        "A tender, golden-fried chicken breast topped with crisp lettuce, ripe tomatoes, and our signature creamy mayo on a toasted brioche bun.",
       imageSrc: "/burger2.png",
       price: 4.99,
+      foodBadges: [foodBadges.crispy, foodBadges.bestSeller],
     },
     {
-      name: "chicken burger",
+      name: "Spicy Zinger Burger",
+      description:
+        "Fiery buttermilk-marinated chicken breast with a spicy breading, layered with cooling coleslaw and zesty jalapeño aioli.",
       imageSrc: "/burger2.png",
       price: 4.99,
+      foodBadges: [foodBadges.spicy, foodBadges.hot],
     },
     {
-      name: "chicken burger",
+      name: "Grilled Herb Chicken Burger",
+      description:
+        "Succulent herb-marinated grilled chicken breast served with fresh baby spinach, red onions, and a light garlic herb sauce.",
       imageSrc: "/burger2.png",
       price: 4.99,
+      foodBadges: [foodBadges.protein, foodBadges.fresh],
     },
     {
-      name: "chicken burger",
+      name: "BBQ Smokehouse Chicken Burger",
+      description:
+        "Crispy chicken breast smothered in smoky hickory BBQ sauce, topped with melted cheddar cheese and crunchy fried onion strings.",
       imageSrc: "/burger2.png",
       price: 4.99,
+      foodBadges: [foodBadges.bbq, foodBadges.cheesy],
     },
     {
-      name: "chicken burger",
+      name: "California Chicken Burger",
+      description:
+        "Southern-style fried chicken topped with fresh smashed avocado, crispy bacon, and a drizzle of ranch dressing.",
       imageSrc: "/burger2.png",
       price: 4.99,
+      foodBadges: [foodBadges.new, foodBadges.creamy],
     },
   ],
 };

@@ -18,32 +18,31 @@ export default function FoodTabs({
       value={category}
       onValueChange={(val) => onCategoryChange(val as FoodCategory)}
     >
-      <div className="flex flex-col gap-space-lg">
-        {foodCategories.map((val) => {
-          const isSelected = val.name === category;
-          return (
-            <Label
-              className={cn(
-                "bg-card rounded-2xl px-space-md py-space-sm flex gap-space-lg items-center cursor-pointer",
-                isSelected &&
-                  "bg-primary text-primary-foreground shadow-lg shadow-primary/25",
-              )}
-            >
-              <RadioGroupItem value={val.name} hidden />
-              <img
-                src={val.iconSrc}
-                className={cn(
-                  "size-10 rounded-full",
-                  isSelected && "bg-primary",
-                  !isSelected && "drop-shadow-md"
-                )}
-              ></img>
-              <span className="capitalize font-medium text-base">
-                {val.name}
-              </span>
-            </Label>
-          );
-        })}
+      <div>
+        <div className="flex">
+          <div className="bg-card flex rounded-2xl p-space-xs gap-space-sm">
+            {foodCategories.map((val) => {
+              const isSelected = val.name === category;
+              return (
+                <Label
+                  className={cn(
+                    "bg-card rounded-2xl px-space-md py-space-sm flex gap-space-sm items-center cursor-pointer",
+                    isSelected && "bg-muted",
+                  )}
+                >
+                  <RadioGroupItem value={val.name} hidden />
+                  <img
+                    src={val.iconSrc}
+                    className={cn("size-10 rounded-full drop-shadow-md")}
+                  ></img>
+                  <span className="capitalize font-medium text-base">
+                    {val.name}
+                  </span>
+                </Label>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </RadioGroup>
   );
