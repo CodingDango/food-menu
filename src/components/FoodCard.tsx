@@ -19,7 +19,7 @@ interface FoodCardProps {
 
 export default function FoodCard({ food }: FoodCardProps) {
   return (
-    <div className="bg-card py-space-lg px-space-md pt-space-sm rounded-2xl relative">
+    <div className="bg-card p-space-md sm:py-space-lg sm:px-space-md pt-space-sm rounded-2xl relative">
       <div className="flex flex-col items-center gap-space-lg relative">
         <div className="w-38 h-32 relative">
           <img
@@ -52,16 +52,16 @@ export default function FoodCard({ food }: FoodCardProps) {
       <Dialog>
         <DialogTrigger className="absolute inset-0 rounded-2xl"></DialogTrigger>
 
-        <DialogContent className="sm:max-w-3xl w-full grid-cols-[1fr_300px]">
+        <DialogContent className="sm:max-w-3xl w-full lg:grid-cols-[1fr_300px]">
           <DialogHeader className="flex flex-col gap-y-space-md">
-            <DialogTitle className="capitalize text-2xl flex gap-space-md items-start">
+            <DialogTitle className="text-start capitalize text-2xl flex gap-space-md items-center">
               <div className="font-bold">{food.name}</div>
               <div className="font-bold text-primary text-end text-2xl">
                 {toCurrency(food.price)}
               </div>
             </DialogTitle>
 
-            <p className="text-muted-foreground">{food.description}</p>
+            <p className="text-start  text-muted-foreground">{food.description}</p>
 
             <FoodBadgeList foodBadges={food.foodBadges}/>
           </DialogHeader>
