@@ -34,7 +34,7 @@ export default function FoodImage({
     >
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center z-20">
-          <Spinner />
+          <Spinner className="size-8"/>
         </div>
       )}
       <img
