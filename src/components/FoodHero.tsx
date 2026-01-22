@@ -10,7 +10,7 @@ export default function FoodHero({
   foodBadges,
 }: MenuItem) {
   return (
-    <div className="bg-card grid lg:grid-cols-[1fr_300px] p-space-md sm:p-space-lg rounded-2xl gap-space-lg">
+    <div className="bg-card grid lg:grid-cols-[1fr_300px] p-space-md sm:p-space-lg rounded-2xl gap-space-xl">
       <div className="space-y-space-md">
         <div className="flex items-center gap-space-md">
           <h2 className="text-3xl font-semibold capitalize">{name}</h2>

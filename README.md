@@ -7,6 +7,7 @@
 - Add pop up card to food grid cards for a more detailed view.
 - Add unique icons to the food tabs
 - Add animations when switching food tabs
+- Responsiveness of page
 
 ## Todo
-- Responsiveness of page
+

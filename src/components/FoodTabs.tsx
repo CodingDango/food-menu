@@ -20,7 +20,6 @@ export default function FoodTabs({
       onValueChange={(val) => onCategoryChange(val as FoodCategory)}
       className="flex" // Center the tabs
     >
-      {/* Container: Remove the background color if you want a cleaner look, or keep it light */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-space-sm lg:gap-space-md backdrop-blur-sm rounded-2xl">
         {foodCategories.map((val) => {
           const isSelected = val.name === category;
@@ -35,7 +34,7 @@ export default function FoodTabs({
             >
               <RadioGroupItem value={val.name} className="sr-only"/>
 
-              <div className="flex items-center gap-space-sm z-10">
+              <div className="z-10 flex items-center gap-space-sm">
                 <img
                   src={val.iconSrc}
                   alt={val.name}
@@ -46,7 +45,7 @@ export default function FoodTabs({
                       : "grayscale opacity-70",
                   )}
                 />
-                <span className="capitalize font-semibold text-base">
+                <span className="text-base font-semibold capitalize">
                   {val.name}
                 </span>
               </div>
@@ -54,8 +53,8 @@ export default function FoodTabs({
               {isSelected && (
                 <motion.div
                   layoutId="active-tab-underline"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-full"
-                  initial={false}
+                  className="absolute bottom-0 left-0 right-0 h-1 rounded-full bg-primary"
+                  
                 />
               )}
             </Label>
