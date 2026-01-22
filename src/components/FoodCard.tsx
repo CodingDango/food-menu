@@ -8,8 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { cn, toCurrency } from "../lib/utils";
-import { Badge } from "./ui/badge";
+import { toCurrency } from "../lib/utils";
 import { Info } from "lucide-react";
 import FoodBadgeList from "./FoodBadgeList";
 
