@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 
 import { toCurrency } from "../lib/utils";
 import { Info } from "lucide-react";
+
 import FoodInfoDialog from "./FoodInfoDialog";
 import FoodImage from "./FoodImage";
 
