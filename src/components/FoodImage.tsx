@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 import { cn } from "../lib/utils";
 import { Spinner } from "./ui/spinner";
 
-// Global cache outside the component
 const imageLoadCache = new Set<string>();
 
 interface FoodImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -15,24 +14,14 @@ export default function FoodImage({
   src,
   ...props
 }: FoodImageProps) {
-  // Check cache immediately - if we've loaded this URL before, start as not loading
   const [isLoading, setIsLoading] = useState(() => {
     return src ? !imageLoadCache.has(src) : true;
   });
 
-  const imageRef = useCallback((node: HTMLImageElement | null) => {
-    if (node !== null && node.complete) {
-      setIsLoading(false);
-      if (node.src) {
-        imageLoadCache.add(node.src);
-      }
-    }
-  }, []);
-
   const handleLoad = useCallback(() => {
     setIsLoading(false);
     if (src) {
-      imageLoadCache.add(src);
+      imageLoadCache.add(src);  
     }
   }, [src]);
 
@@ -49,7 +38,6 @@ export default function FoodImage({
         </div>
       )}
       <img
-        ref={imageRef}
         src={src}
         alt={alt}
         onLoad={handleLoad}
