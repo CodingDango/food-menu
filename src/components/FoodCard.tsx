@@ -24,7 +24,7 @@ export default function FoodCard({ food }: FoodCardProps) {
         <div className="w-38 h-32 relative">
           <img
             src={food.imageSrc}
-            className="object-contain drop-shadow-2xl absolute inset-0 aspect-square"
+            className="object-contain drop-shadow-2xl absolute inset-0 aspect-square scale-105"
           />
         </div>
 

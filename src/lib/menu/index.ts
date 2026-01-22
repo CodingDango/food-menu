@@ -1,4 +1,4 @@
-import type { FoodCategory, MenuCategory } from '../../../types/types';
+import type { FoodCategory, MenuCategory } from '../../types/types';
 import { burgersCategory } from './burgers';
 import { drinksCategory } from './drinks'; // Assuming you create this
 import { sidesCategory } from './sides';

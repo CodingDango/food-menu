@@ -1,6 +1,6 @@
 // foodBadges.ts
 
-import type { FoodBadge } from "../../../types/types";
+import type { FoodBadge } from "../../types/types";
 
 // 1. Define your Color Themes (Pastel BG + Strong Text)
 const themes = {

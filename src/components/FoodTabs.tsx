@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 import type { FoodCategory } from "../types/types";
-import { foodCategories } from "../lib/menu/categories/categories";
+import { foodCategories } from "../lib/categories/categories";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 

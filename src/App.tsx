@@ -6,7 +6,7 @@ import MenuHeading from "./components/MenuHeading";
 import { AnimatePresence, motion } from "motion/react";
 import type { FoodCategory } from "./types/types";
 import { useMemo, useState } from "react";
-import { foodMenu } from "./lib/menu/foods";
+import { foodMenu } from "./lib/menu";
 
 export default function Menu() {
   const [foodCategory, setFoodCategory] = useState<FoodCategory>("burgers");
