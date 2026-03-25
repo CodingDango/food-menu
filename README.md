@@ -1,14 +1,20 @@
-# Food Menu Project
+# Restaurant Menu Showcase
 
-## Finished
-- Fill up placeholder data for sides
-- Fill up placeholder data for dessert
-- Add unique icons to the nutrients
-- Add pop up card to food grid cards for a more detailed view.
-- Add unique icons to the food tabs
-- Add animations when switching food tabs
-- Responsiveness of page
+A modern, interactive food menu web application with smooth animations and elegant UI design. Features category-based navigation, detailed food dialogs, and polished loading states.
 
-## Todo
+**[Live Demo Link](https://food-menu-mu-six.vercel.app)**
 
-react typescript threejs framer-motion tailwindcss shadcn-ui vite swiperjs frontend-development webgl responsive-design landing-page interactive-ui 
+## Features
+
+- **Category Navigation:** Smooth tab transitions with animated underlines and scale effects.
+- **Interactive Food Cards:** Click to view detailed descriptions and tags in a focused modal dialog.
+- **Polished Loading States:** Image loading spinners with satisfying pop-in animations.
+- **Backdrop Blur:** Dialogs darken and blur the background to maintain focus on content.
+- **Fully Responsive:** Optimized layouts for mobile, tablet, and desktop viewports.
+
+## Tech Stack
+
+- **Framework:** React (Vite)
+- **Styling:** Tailwind CSS + Shadcn/UI
+- **Animations:** Framer Motion
+  
