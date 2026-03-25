@@ -11,3 +11,4 @@
 
 ## Todo
 
+react typescript threejs framer-motion tailwindcss shadcn-ui vite swiperjs frontend-development webgl responsive-design landing-page interactive-ui 
